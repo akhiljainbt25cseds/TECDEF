@@ -17,3 +17,4 @@ if os.path.exists(PROJECT_DIR):
 else:
     sys.stderr.write(f"Error: Project directory not found at {PROJECT_DIR}\n")
     sys.exit(1)
+
