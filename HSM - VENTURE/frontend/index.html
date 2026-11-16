@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechDef &bull; Real-Time Hardware Telemetry & Autonomous Cooling</title>
+
+  <!-- Google Fonts: Syne & Sora -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Portal Dedicated Stylesheet -->
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. FIXED 58PX NAVIGATION BAR
+       ======================================================================== -->
+  <nav class="portal-nav" aria-label="Portal Navigation">
+    <a href="#" class="nav-wordmark">
+      TECH&bull;DEF<span class="period">.</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#statement" class="nav-link">System</a></li>
+      <li><a href="#auth" class="nav-link">Operator Access</a></li>
+      <li><a href="#capabilities" class="nav-link">Architecture</a></li>
+      <li><a href="/dashboard" class="nav-link accent-amber">Dashboard</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#auth" class="nav-pill-btn">Sign In</a>
+      <a href="/dashboard" class="nav-pill-btn primary">
+        <span>Enter Console</span>
+        <span class="accent-amber">&rarr;</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       2. PORTAL HERO (~2.5 VIEWPORTS TALL, STICKY STAGE)
+       ======================================================================== -->
+  <section class="portal-hero-container" id="hero-portal" aria-label="Portal Hero">
+    <div class="portal-stage">
+
+      <!-- Layer 1: Full-Bleed Hero Image (Dark Hardware Sculpture & Amber Lamp) -->
+      <div class="hero-media-wrapper">
+        <img 
+          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2200&auto=format&fit=crop" 
+          alt="Dark Mechanical Architecture" 
+          class="hero-image"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Layer 2: Duotone Overlay Wash (Amber #E8913C and Teal #2E6B72 at overlay) -->
+      <div class="hero-duotone-wash" aria-hidden="true"></div>
+
+      <!-- Layer 3: Radial Edge Veil -->
+      <div class="hero-radial-veil" aria-hidden="true"></div>
+
+      <!-- Layer 4: Two Solid Panels meeting in middle (hero begins CLOSED) -->
+      <div class="hero-panel panel-left" aria-hidden="true"></div>
+      <div class="hero-panel panel-right" aria-hidden="true"></div>
+
+      <!-- Layer 5: Accent Dots Traveling Outward to Opposite Corners -->
+      <div class="hero-accent-dot dot-amber-moving" aria-hidden="true"></div>
+      <div class="hero-accent-dot dot-teal-moving" aria-hidden="true"></div>
+
+      <!-- Layer 6: Signature Split Wordmark on Top -->
+      <div class="hero-title-wrapper">
+        <h1 class="hero-wordmark">
+          <span class="word-left">TECH</span><span class="word-separator">&bull;</span><span class="word-right">DEF</span><span class="period" style="color:var(--amber);">&nbsp;.</span>
+        </h1>
+      </div>
+
+      <!-- Layer 7: Corner Metadata Pinned to Edges -->
+      <div class="hero-corner-meta meta-top-left">
+        <div>SYS // VER. 2.4.0</div>
+        <div style="color: var(--amber); margin-top: 3px;">&bull; ENGINE ONLINE</div>
+      </div>
+
+      <div class="hero-corner-meta meta-top-right">
+        <div>BUS // RFC 6455 SOCKET</div>
+        <div style="color: var(--teal); margin-top: 3px;">127.0.0.1:8765</div>
+      </div>
+
+      <div class="hero-corner-meta meta-bottom-left">
+        <div>APPLE SILICON M-SERIES &amp; X86_64 ARCHITECTURE</div>
+        <div style="color: var(--muted); margin-top: 3px;">ISOLATED TELEMETRY KERNEL</div>
+      </div>
+
+      <div class="hero-corner-meta meta-bottom-right">
+        <div class="scroll-indicator-wheel" aria-hidden="true"></div>
+        <span>SCROLL TO UNCOVER</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. STATEMENT FOLD (FULL-HEIGHT SECTION)
+       ======================================================================== -->
+  <section class="statement-section" id="statement" aria-label="System Statement">
+    <div class="statement-content">
+      <div class="section-label">
+        <span class="dot-amber"></span>
+        <span>01 // STATEMENT</span>
+      </div>
+
+      <div class="statement-numeral" aria-hidden="true">01</div>
+
+      <h2 class="statement-text">
+        ENGINEERED AT THE PHYSICAL LIMIT WHERE SILICON EFFICIENCY MEETS <span class="accent-amber">DYNAMIC THERMAL CONTROL</span>.
+      </h2>
+
+      <p class="statement-lede">
+        TechDef Pro executes directly on the machine's local bus. Zero cloud latency, zero extraneous background overhead. Real-time per-core temperature sensing, autonomous multi-stage fan escalation, and 60-second rolling telemetry charts.
+      </p>
+
+      <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+        <a href="#auth" class="nav-pill-btn primary">
+          <span>Authenticate Operator</span>
+          <span class="accent-amber">&rarr;</span>
+        </a>
+        <a href="/dashboard" class="nav-pill-btn">
+          <span>Direct Dashboard Launch</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Drifting Circular Visual Motif -->
+    <div class="floating-circle-motif" aria-hidden="true">
+      <div class="floating-circle-inner"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. USER AUTHENTICATION & OPERATOR ACCESS SECTION
+       ======================================================================== -->
+  <section class="auth-section" id="auth" aria-label="Operator Authentication">
+    <div class="auth-container">
+      
+      <!-- Subtle Framing Corner Hairlines -->
+      <div class="auth-corner-accent tl" aria-hidden="true"></div>
+      <div class="auth-corner-accent tr" aria-hidden="true"></div>
+      <div class="auth-corner-accent bl" aria-hidden="true"></div>
+      <div class="auth-corner-accent br" aria-hidden="true"></div>
+
+      <div class="auth-header">
+        <div class="section-label" style="margin-bottom: 12px;">
+          <span class="dot-teal"></span>
+          <span>02 // OPERATOR ACCESS</span>
+        </div>
+        <h3 class="auth-title">CONNECT TO YOUR INSTANCE</h3>
+        <p class="auth-subtitle">Sign in or create an operator account to unlock autonomous thermal escalation profiles and telemetry logs.</p>
+        
+        <!-- Existing Session Greeting (if logged in) -->
+        <div id="user-greeting-pill" style="display: none; margin-top: 16px; padding: 10px 14px; background: rgba(232, 145, 60, 0.08); border: 1px solid rgba(232, 145, 60, 0.3); font-size: 11.5px; color: var(--ink);"></div>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab-btn active" id="tab-signin" role="tab" aria-selected="true">Sign In</button>
+        <button class="auth-tab-btn" id="tab-signup" role="tab" aria-selected="false">Create Account</button>
+      </div>
+
+      <!-- Feedback Area -->
+      <div class="auth-feedback" id="auth-feedback" role="alert"></div>
+
+      <!-- FORM A: SIGN IN -->
+      <form class="auth-form" id="form-signin" autocomplete="on">
+        <div class="form-group">
+          <label class="form-label" for="signin-identifier">
+            <span>Operator Callsign or Email</span>
+            <span class="accent-amber">&bull;</span>
+          </label>
+          <input 
+            type="text" 
+            id="signin-identifier" 
+            class="form-input" 
+            placeholder="operator@techdef.local" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signin-password">
+            <span>Access Key / Password</span>
+            <a href="#" class="form-link" onclick="alert('Default operator token is: techdef-gamer-secret-token'); return false;">Forgot Key?</a>
+          </label>
+          <input 
+            type="password" 
+            id="signin-password" 
+            class="form-input" 
+            placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" 
+            required 
+          />
+        </div>
+
+        <div class="form-options">
+          <label class="form-checkbox-label">
+            <input type="checkbox" id="signin-remember" checked />
+            <span>Remember local hardware session</span>
+          </label>
+        </div>
+
+        <button type="submit" class="auth-submit-btn">
+          <span>Authenticate &amp; Launch Console</span>
+          <span class="accent-amber">&rarr;</span>
+        </button>
+
+        <div class="auth-divider">
+          <span>Or Quick Access</span>
+        </div>
+
+        <button type="button" class="guest-bypass-btn">
+          Continue as Guest Operator &rarr;
+        </button>
+      </form>
+
+      <!-- FORM B: SIGN UP -->
+      <form class="auth-form" id="form-signup" style="display: none;" autocomplete="on">
+        <div class="form-group">
+          <label class="form-label" for="signup-username">
+            <span>Operator Callsign</span>
+            <span class="accent-teal">&bull;</span>
+          </label>
+          <input 
+            type="text" 
+            id="signup-username" 
+            class="form-input" 
+            placeholder="e.g. Maverick_Zero" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-email">
+            <span>Email Address</span>
+          </label>
+          <input 
+            type="email" 
+            id="signup-email" 
+            class="form-input" 
+            placeholder="operator@domain.com" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-password">
+            <span>Create Access Key</span>
+            <span style="font-size: 9.5px; color: var(--muted);">Min 6 characters</span>
+          </label>
+          <input 
+            type="password" 
+            id="signup-password" 
+            class="form-input" 
+            placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" 
+            required 
+          />
+        </div>
+
+        <button type="submit" class="auth-submit-btn">
+          <span>Register Profile &amp; Launch</span>
+          <span class="accent-amber">&rarr;</span>
+        </button>
+
+        <div class="auth-divider">
+          <span>Instant Bypass</span>
+        </div>
+
+        <button type="button" class="guest-bypass-btn">
+          Launch as Guest &rarr;
+        </button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. SYSTEM CAPABILITIES ROSTER (HAIRLINE-RULED ROWS)
+       ======================================================================== -->
+  <section class="capabilities-section" id="capabilities" aria-label="System Capabilities">
+    <div class="capabilities-header">
+      <div class="section-label">
+        <span class="dot-amber"></span>
+        <span>03 // ARCHITECTURE &amp; CAPABILITIES</span>
+      </div>
+      <h3 class="capabilities-title">ENGINEERED FOR UNCOMPROMISED ACCURACY</h3>
+    </div>
+
+    <div class="capabilities-table">
+      <div class="capability-row">
+        <div class="cap-index">01</div>
+        <div class="cap-name">Native Sensor Bus</div>
+        <div class="cap-desc">Direct kernel interrogation on macOS (sysctl, vm_stat, ioreg) and NVML / LibreHardwareMonitor on Windows.</div>
+        <div class="cap-metric">1,000 ms Poll</div>
+      </div>
+
+      <div class="capability-row">
+        <div class="cap-index">02</div>
+        <div class="cap-name">Reversible Automation</div>
+        <div class="cap-desc">Tri-stage dynamic cooling escalation with 30-second hysteresis recovery preventing fan flutter and temperature oscillation.</div>
+        <div class="cap-metric">30s Hysteresis</div>
+      </div>
+
+      <div class="capability-row">
+        <div class="cap-index">03</div>
+        <div class="cap-name">Zero-Overhead Bus</div>
+        <div class="cap-desc">Low-latency RFC 6455 WebSocket streaming. Native single-threaded async event loop demanding less than 0.1% CPU consumption.</div>
+        <div class="cap-metric">&lt; 0.1% CPU</div>
+      </div>
+
+      <div class="capability-row">
+        <div class="cap-index">04</div>
+        <div class="cap-name">Hardware Safety Clamp</div>
+        <div class="cap-desc">Mandatory minimum safe fan floor (40%) and explicit operator opt-in before permitting autonomous voltage or RPM modifications.</div>
+        <div class="cap-metric">100% Isolated</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. CLOSE SECTION (CROPPED WORDMARK)
+       ======================================================================== -->
+  <section class="close-section" aria-label="Portal Close">
+    <div class="close-content">
+      <div>
+        <div class="section-label" style="margin-bottom: 14px;">
+          <span class="dot-teal"></span>
+          <span>04 // DEPLOYMENT</span>
+        </div>
+        <h3 class="close-heading">READY TO ENGAGE THE SENSORS.</h3>
+      </div>
+
+      <div class="close-actions">
+        <a href="/dashboard" class="nav-pill-btn primary" style="padding: 12px 24px; font-size: 11px;">
+          <span>Enter Live Console</span>
+          <span class="accent-amber">&rarr;</span>
+        </a>
+        <a href="#auth" class="nav-pill-btn" style="padding: 12px 24px; font-size: 11px;">
+          <span>Sign In / Register</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hairline Footer Strip -->
+    <div class="footer-hairline-strip">
+      <div>&copy; 2026 TECHDEF PRO &bull; LOCAL HARDWARE AGENT</div>
+      <div>BOUND STRICTLY TO LOCALHOST (127.0.0.1:8765)</div>
+      <div>SYNE / SORA TYPOGRAPHY</div>
+    </div>
+
+    <!-- Massive Wordmark Cropped by Page Edge -->
+    <div class="close-big-wordmark" aria-hidden="true">
+      TECHDEF<span class="period">.</span>
+    </div>
+  </section>
+
+  <!-- Portal Interactive Script -->
+  <script src="portal.js"></script>
+
+</body>
+</html>

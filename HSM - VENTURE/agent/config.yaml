@@ -1,0 +1,87 @@
+# TechDef Gaming Hardware Agent Configuration
+server:
+  host: "127.0.0.1"
+  port: 8765
+  token: "techdef-gamer-secret-token"
+  stream_interval_seconds: 1.0
+
+safety:
+  fan_control_enabled: true           # Enabled by default for direct control
+  min_safe_fan_pct: 0                 # Full range control
+  max_fan_pct: 100
+  hysteresis_seconds: 30              # Dwell time below safe temp before stepping down
+  warning_dwell_seconds: 5            # Must exceed warning temp for 5s before escalating
+
+thresholds:
+  cpu_warn_c: 80.0
+  cpu_crit_c: 92.0
+  cpu_safe_c: 72.0
+  gpu_warn_c: 80.0
+  gpu_crit_c: 90.0
+  gpu_safe_c: 70.0
+
+active_profile: "auto"                # "silent" | "balanced" | "performance" | "auto"
+
+profiles:
+  silent:
+    fan_target_pct: 45
+    power_limit_pct: 80
+    fps_cap: 60
+  balanced:
+    fan_target_pct: 65
+    power_limit_pct: 100
+    fps_cap: 120
+  performance:
+    fan_target_pct: 90
+    power_limit_pct: 110
+    fps_cap: 0                        # Uncapped
+  auto:
+    game_detected_profile: "performance"
+    idle_profile: "balanced"
+
+game_processes:
+  - "cs2.exe"
+  - "csgo.exe"
+  - "valorant.exe"
+  - "valorant-win64-shipping.exe"
+  - "cyberpunk2077.exe"
+  - "eldenring.exe"
+  - "fortniteclient-win64-shipping.exe"
+  - "cod.exe"
+  - "modernwarfare.exe"
+  - "overwatch.exe"
+  - "apexlegends.exe"
+  - "r5apex.exe"
+  - "gta5.exe"
+  - "witcher3.exe"
+  - "baldursgate3.exe"
+  - "bg3.exe"
+  - "dota2.exe"
+  - "league of legends.exe"
+  # macOS game binaries & app names
+  - "Resident Evil 4"
+  - "ResidentEvil4"
+  - "re4"
+  - "Baldur's Gate 3"
+  - "BaldursGate3"
+  - "bg3"
+  - "Death Stranding"
+  - "DeathStranding"
+  - "Lies of P"
+  - "LiesOfP"
+  - "Hades"
+  - "Hades2"
+  - "Dota 2"
+  - "dota2"
+  - "League of Legends"
+  - "LeagueClient"
+  - "World of Warcraft"
+  - "Wow"
+  - "Minecraft"
+  - "Shadow of the Tomb Raider"
+  - "No Man's Sky"
+  - "Civilization VI"
+
+libre_hardware_monitor:
+  url: "http://localhost:8085/data.json"
+  timeout_seconds: 1.5

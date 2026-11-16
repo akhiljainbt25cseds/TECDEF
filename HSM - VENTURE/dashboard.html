@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full dark bg-[#0A0C0E]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechDef Pro &bull; Real-Time Telemetry &amp; Autonomous Cooling Dashboard</title>
+  
+  <!-- Google Fonts: Syne, Sora & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN with Portal Label Palette (Ground #0A0C0E, Bone #EDE7DC, Amber #E8913C, Teal #2E6B72) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Syne"', 'system-ui', 'sans-serif'],
+            sans: ['"Sora"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            ground: {
+              DEFAULT: '#0A0C0E',
+              sub: '#101317',
+              card: '#101317'
+            },
+            bone: {
+              DEFAULT: '#EDE7DC',
+              secondary: '#9EA5A8',
+              muted: '#6C7378'
+            },
+            amber: {
+              DEFAULT: '#E8913C',
+              400: '#E8913C',
+              500: '#E8913C',
+              600: '#d97d26',
+              glow: 'rgba(232, 145, 60, 0.25)'
+            },
+            teal: {
+              DEFAULT: '#2E6B72',
+              400: '#2E6B72',
+              500: '#2E6B72',
+              600: '#23555b',
+              glow: 'rgba(46, 107, 114, 0.25)'
+            },
+            hairline: {
+              DEFAULT: 'rgba(237, 231, 220, 0.13)',
+              strong: 'rgba(237, 231, 220, 0.28)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- React 18 & ReactDOM 18 (JSDelivr primary + Unpkg failover) -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script>
+    if (!window.React) {
+      document.write('<script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"><\/script>');
+      document.write('<script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Global Error Boundary & Logger -->
+  <script>
+    window.addEventListener('error', function(e) {
+      var err = e.error || e;
+      var msg = e.message || (err && err.message) || String(err);
+      var root = document.getElementById('root');
+      if (root && (!root.children.length || root.innerHTML.indexOf('TechDef Pro') !== -1 || root.innerHTML.indexOf('TECH•DEF') !== -1)) {
+        root.innerHTML = '<div style="padding:40px;color:#f87171;background:#101317;border:1px solid #ef4444;margin:40px;border-radius:12px;font-family:\'JetBrains Mono\',monospace;box-shadow:0 20px 50px rgba(0,0,0,0.8);">' +
+          '<h3 style="color:#ef4444;margin-top:0;font-size:18px;">⚠️ Dashboard Runtime Error</h3>' +
+          '<pre style="white-space:pre-wrap;color:#fecaca;font-size:13px;background:#0A0C0E;padding:16px;border-radius:8px;border:1px solid rgba(237,231,220,0.13);">' + msg + '\n' + (e.filename || '') + ':' + (e.lineno || '') + '</pre>' +
+          '<button onclick="location.reload()" style="margin-top:16px;padding:8px 16px;background:#E8913C;color:#0A0C0E;font-weight:bold;border:none;border-radius:6px;cursor:pointer;">Reload Dashboard</button>' +
+        '</div>';
+      }
+    });
+  </script>
+</head>
+<body class="h-full bg-[#0A0C0E] text-[#EDE7DC] antialiased selection:bg-[#E8913C] selection:text-[#0A0C0E] overflow-hidden">
+  
+  <!-- Root React App Mount Point with Loading Spinner -->
+  <div id="root" class="h-full">
+    <div style="height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0A0C0E;color:#E8913C;font-family:'JetBrains Mono',monospace;">
+      <div style="width:44px;height:44px;border:3px solid rgba(232,145,60,0.2);border-top:3px solid #E8913C;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:16px;"></div>
+      <div style="font-size:16px;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-family:'Syne',sans-serif;color:#EDE7DC;">TECH&bull;DEF<span style="color:#E8913C;">.</span></div>
+      <div style="font-size:11px;color:#9EA5A8;margin-top:6px;letter-spacing:0.12em;text-transform:uppercase;font-family:'Sora',sans-serif;">Interrogating hardware sensor bus...</div>
+      <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
+    </div>
+  </div>
+
+  <!-- Pure Vanilla JS React Application (Zero Runtime Babel, Instant Load) -->
+  <script src="app.js"></script>
+</body>
+</html>
